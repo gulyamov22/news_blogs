@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+Главная страница
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            {% for f in form %}
+                {{f}}
+            {% endfor %}
+        <button class="btn btn-primary">Регистрация</button>
+        </form>
+    </div>
+{% endblock %}
